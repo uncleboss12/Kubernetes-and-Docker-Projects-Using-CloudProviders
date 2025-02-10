@@ -17,19 +17,19 @@ docker ps -a
 mkdir test && cd test
 
 cat > Dockerfile <<EOF
-# Use an official Node runtime as the parent image
+### Use an official Node runtime as the parent image
 FROM node:lts
 
-# Set the working directory in the container to /app
+### Set the working directory in the container to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+### Copy the current directory contents into the container at /app
 ADD . /app
 
-# Make the container's port 80 available to the outside world
+### Make the container's port 80 available to the outside world
 EXPOSE 80
 
-# Run app.js using node when the container launches
+### Run app.js using node when the container launches
 CMD ["node", "app.js"]
 EOF
 
@@ -101,7 +101,7 @@ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}
 # push to google Artifact Repo 
 gcloud auth configure-docker us-west1-docker.pkg.dev
 
-# or 
+### or 
 
 gcloud artifacts repositories create my-repository --repository-format=docker --location=us-west1 --description="Docker repository"
 
