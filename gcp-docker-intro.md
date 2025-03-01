@@ -1,5 +1,6 @@
 
 # Using Google clod to build and push a docker image to the google artifact Repository
+```bash
 gcloud auth list
 
 gcloud config list project
@@ -97,8 +98,10 @@ docker inspect d1383bd651d2
 docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [container_id]
 
 docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' d1383bd651d2
+```
 
 # push to google Artifact Repo 
+```bash
 gcloud auth configure-docker us-west1-docker.pkg.dev
 
 ### or 
@@ -113,8 +116,9 @@ docker build -t us-west1-docker.pkg.dev/qwiklabs-gcp-04-cce5c91acf7e/my-reposito
 docker images
 
 docker push us-west1-docker.pkg.dev/qwiklabs-gcp-04-cce5c91acf7e/my-repository/node-app:0.2
-
+```
 # Test the Image
+```bash
 docker stop $(docker ps -q)
 docker rm $(docker ps -aq)
 
@@ -126,6 +130,6 @@ docker images
 docker run -p 4000:80 -d us-west1-docker.pkg.dev/qwiklabs-gcp-04-cce5c91acf7e/my-repository/node-app:0.2
 
 curl http://localhost:4000
-
+```
 
 
