@@ -6,7 +6,7 @@ Below is a collection of key files in this repository:
 
 | File Name | Description | Providers |
 |-----------|-------------|-----------|
-| [main.tf](./main.tf) | Main Terraform configuration file |   GCP   |
+| [gcp-docker-intro.md](./GCP/gcp-docker-intro.md) | Building a simple docker image |   GCP   |
 | [variables.tf](./variables.tf) | Variable definitions |
 | [outputs.tf](./outputs.tf) | Output definitions |
 | [providers.tf](./providers.tf) | Provider configurations |
